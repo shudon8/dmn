@@ -1,0 +1,25 @@
+{
+  "name": "dmn",
+  "version": "1.0.0",
+  "dependencies": {
+    "discord.js": "^13.6.0",
+    "dotenv": "^14.2.0",
+    "imghash": "^0.0.9",
+    "leven": "^4.0.0",
+    "quick.db": "^7.1.3",
+    "snoowrap": "^1.23.0"
+  },
+  "description": "Dmn the horny bot",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "watch-ex": "tsc -w",
+    "watch": "tsc-alias -w",
+    "start": "cd ./dist/ && nodemon index.js"
+  },
+  "author": "Kaya Selimoğlu",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  }
+}
