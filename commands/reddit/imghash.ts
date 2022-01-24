@@ -7,6 +7,7 @@ import request from 'request'
 import ffmpeg from '@ffmpeg-installer/ffmpeg'
 import ffprobe from '@ffprobe-installer/ffprobe'
 import videoHash from 'video-hash'
+import crypto from 'crypto'
 const vHash = new videoHash({
     ffmpegPath: ffmpeg.path,
     ffprobePath: ffprobe.path
@@ -25,6 +26,24 @@ export default {
     },
     async callback(message:Message, Image:string, name: string, type: string) : Promise<void> {
         const hashs:string[] = db.get('shitpost.hash') || []
+        if(message.content.length > 250) {
+            const hash1 = crypto.createHash('sha256').update(message.content).digest('hex')
+            for(const hash2 of hashs) {
+                if(!hash2 || hash2 == 'undefined') {
+                    continue
+                }
+                const distance = leven(hash1, hash2);
+                console.log(`Distance between images is: ${distance}`);
+                if (distance <= 8) {
+                    message.reply('Repost atma lan ammmmmcik')
+                    return
+                }
+            }
+            db.push('shitpost.hash', hash1)
+            message.react('👍')
+            message.react('👎')
+            return
+        }
         request.get(Image)
             .on('error', console.error)
             .pipe(fs.createWriteStream('tmp/'+name))

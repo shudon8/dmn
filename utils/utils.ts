@@ -36,7 +36,7 @@ export async function listen(client:Client, r:Snoowrap) {
         if(guid == undefined) return
         let prefix = '!'
         if(message.author.bot) return
-        if(!content.toLowerCase().startsWith(`${prefix}`) && Image && attachment && attachment.size < 8000000) {
+        if(!content.toLowerCase().startsWith(`${prefix}`) && (Image && attachment && attachment.size < 8000000) || content.length > 250) {
             for(const option of options) {
                 if(option.imghash) {
                     console.log(attachment)
