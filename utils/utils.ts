@@ -40,8 +40,9 @@ export async function listen(client:Client, r:Snoowrap) {
             for(const option of options) {
                 if(option.imghash) {
                     console.log(attachment)
+                    const name = attachment?.name
                     if(!message || !message.channel.isText) continue
-                        option.callback(message, Image, attachment.name)
+                        option.callback(message, Image, name, attachment?.contentType)
                     break
                 }
             }
