@@ -6,7 +6,7 @@
     "@ffprobe-installer/ffprobe": "^1.4.1",
     "crypto": "^1.0.1",
     "discord.js": "^13.6.0",
-    "dotenv": "^14.2.0",
+    "dotenv": "^15.0.0",
     "imghash": "^0.0.9",
     "leven": "^4.0.0",
     "quick.db": "^7.1.3",
