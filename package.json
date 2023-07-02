@@ -5,7 +5,7 @@
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@ffprobe-installer/ffprobe": "^1.4.1",
     "crypto": "^1.0.1",
-    "discord.js": "^13.6.0",
+    "discord.js": "^14.0.0",
     "dotenv": "^14.2.0",
     "imghash": "^0.0.9",
     "leven": "^4.0.0",
