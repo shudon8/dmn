@@ -24,6 +24,6 @@
   "author": "Kaya Selimoğlu",
   "license": "MIT",
   "devDependencies": {
-    "typescript": "4.5.5"
+    "typescript": "4.9.5"
   }
 }
